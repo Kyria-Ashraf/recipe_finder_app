@@ -23,7 +23,7 @@ class CustomMaterialButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       child: Text(
-        "Get Started",
+        text,
         style: textstyle,
       ),
     );
