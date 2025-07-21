@@ -53,11 +53,15 @@ class OnboardingViewBody extends StatelessWidget {
               onTap: () {
                 GoRouter.of(context).push(AppRouters.kloginView);
               },
-              child:
-                  const Text("Log in", style: AppFonts.bodyTextFontDarkGrey14),
+              child: const Text("Log in",
+                  style: AppFonts.activeTabFontFreshGreen14),
             )
           ],
-        )
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        const Text("Switch to Arabic", style: AppFonts.bodyTextFontDarkGrey14),
       ],
     );
   }
