@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_colors/app_colors.dart';
 import '../../../../../core/utils/app_fonts/app_fonts.dart';
+import '../../../../../core/utils/app_routers/app_routers.dart';
 import '../../../../../core/widgets/custom_material_button.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
 
@@ -27,7 +29,9 @@ class LoginFormSection extends StatelessWidget {
               text: "Login",
               backgroundColor: AppColors.freshGreen,
               textstyle: AppFonts.buttonsTextFontWhite16,
-              onPressed: () {}),
+              onPressed: () {
+                GoRouter.of(context).push(AppRouters.khomeView);
+              }),
         ],
       ),
     );
