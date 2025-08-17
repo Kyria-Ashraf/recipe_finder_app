@@ -15,6 +15,8 @@ abstract class AppFonts {
       fontSize: 28, fontWeight: FontWeight.w700, color: AppColors.darkGrey);
   static const TextStyle headingsFontBlack28 = TextStyle(
       fontSize: 28, fontWeight: FontWeight.w700, color: AppColors.black);
+  static const TextStyle headingsFontBlack18 = TextStyle(
+      fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.black);
   static const TextStyle headingsFontFreshGreen28 = TextStyle(
       fontSize: 28, fontWeight: FontWeight.w700, color: AppColors.freshGreen);
   //subheadings
@@ -35,6 +37,8 @@ abstract class AppFonts {
       fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.white);
   static const TextStyle buttonsTextFontFreshGreen16 = TextStyle(
       fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.freshGreen);
+  static const TextStyle buttonsTextFontBlack14 = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.black);
   //input fields
   static const TextStyle inputFieldFontDarkGrey14 = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.darkGrey);
