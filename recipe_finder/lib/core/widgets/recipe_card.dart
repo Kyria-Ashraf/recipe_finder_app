@@ -10,50 +10,61 @@ class RecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.2,
-      width: MediaQuery.of(context).size.width * 0.95,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: AppColors.lightGrey2,
-          borderRadius: BorderRadius.circular(10),
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.20,
+      decoration: const BoxDecoration(
+        color: AppColors.lightGrey2,
+        borderRadius: BorderRadius.all(
+          Radius.circular(16),
         ),
-        child: const Row(
-          children: [
-            RecipeCardImage(),
-            SizedBox(width: 5),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Macarona Bechamel",
-                  style: AppFonts.headingsFontBlack18,
+      ),
+      constraints: const BoxConstraints(maxWidth: 500),
+      child: const Stack(
+        clipBehavior: Clip.hardEdge,
+        children: [
+          Row(
+            children: [
+              RecipeCardImage(),
+              // SizedBox(width: 5),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Macarona Bechamel",
+                      overflow: TextOverflow.visible,
+                      softWrap: true,
+                      maxLines: 2,
+                      style: AppFonts.headingsFontBlack18,
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "30 min prep",
+                      style: AppFonts.bodyTextFontDarkGrey14,
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "4 servings",
+                      style: AppFonts.bodyTextFontDarkGrey14,
+                    ),
+                  ],
                 ),
-                SizedBox(height: 5),
-                Text(
-                  "30 min prep",
-                  style: AppFonts.bodyTextFontDarkGrey14,
-                ),
-                SizedBox(height: 5),
-                Text(
-                  "4 servings",
-                  style: AppFonts.bodyTextFontDarkGrey14,
-                ),
-              ],
-            ),
-            SizedBox(width: 8),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 10),
-                CustomRateViewWidget(),
-                Spacer(),
-                FavoriteButton()
-              ],
-            ),
-          ],
-        ),
+              ),
+              // SizedBox(width: 1),
+            ],
+          ),
+          Positioned(
+            top: 10,
+            right: 10,
+            child: CustomRateViewWidget(),
+          ),
+          Positioned(
+            bottom: 10,
+            right: 10,
+            child: FavoriteButton(),
+          )
+        ],
       ),
     );
   }
